@@ -17,8 +17,10 @@ class PLFTableAdmin(admin.ModelAdmin):
 
 @admin.register(HECMInput)
 class HECMInputAdmin(admin.ModelAdmin):
-    list_display = ('created_at', 'home_value', 'age', 'interest_rate', 'existing_mortgage')
-    list_filter = ('created_at', 'age')
+    # Removed 'created_at' which doesn't exist in your model
+    list_display = ('id', 'home_value', 'age', 'interest_rate', 'existing_mortgage')
+    # Removed 'created_at' from list_filter
+    list_filter = ('age',)
     search_fields = ('home_value', 'age')
 
 @admin.register(HECMResult)

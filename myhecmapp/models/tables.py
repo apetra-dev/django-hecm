@@ -1,6 +1,7 @@
 from django.db import models
 from .config import HECMConfig
 
+
 class PLFTable(models.Model):
     """Principal Limit Factor table entries"""
     config = models.ForeignKey(
@@ -23,4 +24,12 @@ class PLFTable(models.Model):
 
     class Meta:
         unique_together = ["config", "age", "interest_rate"]
+        # Add additional indexes for fields commonly used in lookups
+        indexes = [
+            models.Index(fields=['age'], name='plftable_age_idx'),
+            models.Index(fields=['interest_rate'], name='plftable_rate_idx'),
+            models.Index(fields=['age', 'interest_rate'], name='plftable_age_rate_idx'),
+        ]
 
+    def __str__(self):
+        return f"PLF for age {self.age}, rate {self.interest_rate}: {self.factor}"
