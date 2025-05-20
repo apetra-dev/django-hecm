@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HECM Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>HECM Reverse Mortgage Calculator</h1>
+
+        <form id="hecm-calculator-form" method="post" action="{% url 'myhecmapp:calculate' %}">
+            {% csrf_token %}
+
+            <div class="form-group mb-3">
+                <label for="home_value">Home Value ($)</label>
+                <input type="number" class="form-control" id="home_value" name="home_value" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="age">Age of Youngest Borrower</label>
+                <input type="number" class="form-control" id="age" name="age" min="62" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="interest_rate">Expected Interest Rate (%)</label>
+                <input type="number" step="0.125" class="form-control" id="interest_rate" name="interest_rate" required>
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="existing_mortgage">Existing Mortgage Balance ($)</label>
+                <input type="number" class="form-control" id="existing_mortgage" name="existing_mortgage" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Calculate</button>
+        </form>
+
+        <div id="results" class="mt-4" style="display: none;">
+            <h2>Results</h2>
+            <table class="table">
+                <tr>
+                    <th>Principal Limit</th>
+                    <td id="principal_limit"></td>
+                </tr>
+                <tr>
+                    <th>Maximum Cash Out</th>
+                    <td id="max_cash_out"></td>
+                </tr>
+                <tr>
+                    <th>Maximum Origination Fee</th>
+                    <td id="max_origination_fee"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    document.getElementById('hecm-calculator-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        // Show a loading indicator or disable the button
+        const submitButton = this.querySelector('button[type="submit"]');
+        const originalButtonText = submitButton.textContent;
+        submitButton.textContent = 'Calculating...';
+        submitButton.disabled = true;
+
+        fetch('{% url "myhecmapp:calculate" %}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-Requested-With': 'XMLHttpRequest',
+                'X-CSRFToken': '{{ csrf_token }}'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Re-enable the button
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+
+            if (data.success) {
+                document.getElementById('results').style.display = 'block';
+                document.getElementById('principal_limit').textContent = '$' + data.results.principal_limit.toLocaleString();
+                document.getElementById('max_cash_out').textContent = '$' + data.results.max_cash_out.toLocaleString();
+                document.getElementById('max_origination_fee').textContent = '$' + data.results.max_origination_fee.toLocaleString();
+            } else {
+                console.error('Calculation error:', data.error);
+                if (data.traceback) {
+                    console.error('Traceback:', data.traceback);
+                }
+                alert('Error: ' + data.error);
+            }
+        })
+        .catch(error => {
+            // Re-enable the button
+            submitButton.textContent = originalButtonText;
+            submitButton.disabled = false;
+
+            console.error('Fetch error:', error);
+            alert('An error occurred while processing your request. Please try again.');
+        });
+    });
+</script>
+</body>
+</html>

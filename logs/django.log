@@ -1,0 +1,49 @@
+[2025-05-20 12:55:12] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2025-05-20 12:57:23] INFO django.utils.autoreload: C:\Users\AlexPetrakes\PycharmProjects\DjangoHECM\myhecmapp\services\calculator.py changed, reloading.
+[2025-05-20 12:57:25] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2025-05-20 12:57:38] INFO django.server: "GET /hecm/calculate/ HTTP/1.1" 200 4451
+[2025-05-20 12:57:38] WARNING django.server: "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2614
+[2025-05-20 12:58:21] INFO django.server: "POST /hecm/calculate/ HTTP/1.1" 200 281
+[2025-05-20 13:00:40] INFO django.utils.autoreload: C:\Users\AlexPetrakes\PycharmProjects\DjangoHECM\DjangoHECM\settings.py changed, reloading.
+[2025-05-20 13:00:41] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2025-05-20 13:00:43] INFO django.server: "POST /hecm/calculate/ HTTP/1.1" 200 281
+[2025-05-20 13:13:48] INFO django.utils.autoreload: C:\Users\AlexPetrakes\PycharmProjects\DjangoHECM\DjangoHECM\settings.py changed, reloading.
+[2025-05-20 13:13:50] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2025-05-20 13:14:10] INFO django.utils.autoreload: C:\Users\AlexPetrakes\PycharmProjects\DjangoHECM\DjangoHECM\settings.py changed, reloading.
+[2025-05-20 13:14:11] INFO django.utils.autoreload: Watching for file changes with StatReloader
+[2025-05-20 13:15:45] INFO django.utils.autoreload: C:\Users\AlexPetrakes\PycharmProjects\DjangoHECM\DjangoHECM\settings.py changed, reloading.
+INFO 2025-05-20 13:15:46,566 autoreload 61680 61684 Watching for file changes with StatReloader
+INFO 2025-05-20 13:15:46,566 autoreload 61680 61684 Watching for file changes with StatReloader
+INFO 2025-05-20 13:17:59,860 basehttp 61680 62052 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:17:59,860 basehttp 61680 62052 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:18:03,265 basehttp 61680 62052 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:18:03,265 basehttp 61680 62052 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:18:04,870 basehttp 61680 61180 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:18:04,870 basehttp 61680 61180 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:23:35,161 autoreload 61680 61684 C:\Users\AlexPetrakes\PycharmProjects\DjangoHECM\myhecmapp\services\calculator.py changed, reloading.
+INFO 2025-05-20 13:23:35,161 autoreload 61680 61684 C:\Users\AlexPetrakes\PycharmProjects\DjangoHECM\myhecmapp\services\calculator.py changed, reloading.
+INFO 2025-05-20 13:23:36,569 autoreload 59472 60328 Watching for file changes with StatReloader
+INFO 2025-05-20 13:23:36,569 autoreload 59472 60328 Watching for file changes with StatReloader
+INFO 2025-05-20 13:23:56,799 basehttp 59472 60620 "GET /hecm/calculate/ HTTP/1.1" 200 4451
+INFO 2025-05-20 13:23:56,799 basehttp 59472 60620 "GET /hecm/calculate/ HTTP/1.1" 200 4451
+WARNING 2025-05-20 13:23:56,995 log 59472 60620 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-20 13:23:56,995 log 59472 60620 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-20 13:23:56,997 basehttp 59472 60620 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2614
+WARNING 2025-05-20 13:23:56,997 basehttp 59472 60620 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2614
+INFO 2025-05-20 13:24:08,905 calculator 59472 54900 Calculating principal limit factor for age=75, rate=5.5
+INFO 2025-05-20 13:24:08,910 calculator 59472 54900 No exact PLF match found in table, using approximation formula
+INFO 2025-05-20 13:24:08,911 calculator 59472 54900 Calculated PLF using approximation: 0.365
+INFO 2025-05-20 13:24:08,911 calculator 59472 54900 Calculating principal limit factor for age=75, rate=5.5
+INFO 2025-05-20 13:24:08,913 calculator 59472 54900 No exact PLF match found in table, using approximation formula
+INFO 2025-05-20 13:24:08,913 calculator 59472 54900 Calculated PLF using approximation: 0.365
+INFO 2025-05-20 13:24:08,914 calculator 59472 54900 Calculating principal limit factor for age=75, rate=5.5
+INFO 2025-05-20 13:24:08,916 calculator 59472 54900 No exact PLF match found in table, using approximation formula
+INFO 2025-05-20 13:24:08,916 calculator 59472 54900 Calculated PLF using approximation: 0.365
+INFO 2025-05-20 13:24:08,917 basehttp 59472 54900 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:24:08,917 basehttp 59472 54900 "POST /hecm/calculate/ HTTP/1.1" 200 281
+INFO 2025-05-20 13:31:00,595 basehttp 59472 61808 "GET /hecm/calculate/ HTTP/1.1" 200 4451
+INFO 2025-05-20 13:31:00,595 basehttp 59472 61808 "GET /hecm/calculate/ HTTP/1.1" 200 4451
+WARNING 2025-05-20 13:31:00,942 log 59472 61808 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-20 13:31:00,942 log 59472 61808 Not Found: /.well-known/appspecific/com.chrome.devtools.json
+WARNING 2025-05-20 13:31:00,944 basehttp 59472 61808 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2614
+WARNING 2025-05-20 13:31:00,944 basehttp 59472 61808 "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 2614

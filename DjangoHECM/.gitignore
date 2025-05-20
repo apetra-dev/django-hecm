@@ -1,0 +1,37 @@
+# Create a Django-appropriate .gitignore file
+cat > .gitignore << 'EOL'
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Django
+*.log
+*.pot
+*.pyc
+db.sqlite3
+media/
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Local settings
+local_settings.py
+
+# Log files
+logs/
+EOL
+
